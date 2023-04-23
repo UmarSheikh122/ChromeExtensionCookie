@@ -3,7 +3,6 @@ const Task = require("../models/task");
 const getHistoryData = async (req, res) => {
   try {
     const history = await Task.find({});
-    console.log('history: ', history);
     if (!history) {
       return res
         .status(400)
@@ -30,7 +29,6 @@ const insertHistoryData = async (req, res) => {
     const historyObjects = await Task.insertMany(history);
     return res.status(200).json({
       message: "History Added Successfully",
-      historyObjects,
     });
   } catch (error) {
     console.log(error);
