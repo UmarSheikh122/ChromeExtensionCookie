@@ -20,7 +20,6 @@ const getHistoryData = async (req, res) => {
 const insertHistoryData = async (req, res) => {
   try {
     const history = req.body;
-    console.log('history: ', history);
     if (!history) {
       return res
         .status(500)
