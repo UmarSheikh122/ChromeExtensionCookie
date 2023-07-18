@@ -1,10 +1,8 @@
 const express = require("express");
-const {
-  getHistoryData,
-  insertHistoryData,
-} = require("../controllers/index.js")
+const { getUserData, userValidation, updateUserStatus } = require("../controllers/index.js");
 const router = express.Router();
-router.get("/api/historyData", getHistoryData);
-router.post("/api/historyDataInsert", insertHistoryData);
+router.get("/api/getUserData", getUserData);
+router.post("/api/userValidation", userValidation);
+router.put("/api/userStatus", updateUserStatus)
 
 module.exports = router;

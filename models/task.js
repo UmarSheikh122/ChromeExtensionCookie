@@ -1,26 +1,23 @@
 const mongoose = require("mongoose");
-const HistoryDataSchema = mongoose.Schema(
+const Task = mongoose.Schema(
   {
     email: {
       type: String,
       trim: true,
+      unique: true,
+      required: true,
     },
-    title: {
-      type: String,
-      trim: true,
+    cookie: {
+      type: Object,
+      default: {},
     },
-    url: {
-      type: String,
-      trim: true,
-    },
-    lastVisitedTime: {
-      type: String,
-      trim: true,
+    status: {
+      type: Boolean
     },
   },
   { timestamps: true }
 );
 
-const HistoryData = mongoose.model("HistoryData", HistoryDataSchema);
+const UserObj = mongoose.model("Task", Task);
 
-module.exports =  HistoryData;
+module.exports = UserObj;
