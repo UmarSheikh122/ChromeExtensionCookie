@@ -14,13 +14,13 @@ app.use(routes)
 
 // POST endpoint to add new objects to the array
 
-const port = 3000;
+const port = process.env.PORT  || 3000;
 
 const CONNECTION_URL = process.env.CONNECTION_URL;
 
 const start = async () => {
   try {
-    await connectDB(process.env.CONNECTION_URL);
+    await connectDB(CONNECTION_URL);
     app.listen(port, console.log("SERVER is running"));
   } catch (error) {
     console.log("error: ", error);

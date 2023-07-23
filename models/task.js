@@ -12,7 +12,8 @@ const Task = mongoose.Schema(
       default: {},
     },
     status: {
-      type: Boolean
+      type: Boolean,
+      default: false,
     },
   },
   { timestamps: true }
