@@ -15,6 +15,37 @@ const Task = mongoose.Schema(
       type: Boolean,
       default: false,
     },
+    attempt: {
+      type: {
+        SEMRUSH: {
+          type: Number,
+          default: 0,
+        },
+        CANVA: {
+          type: Number,
+          default: 0,
+        },
+        CHATGPT: {
+          type: Number,
+          default: 0,
+        },
+        INDEXIFICATION: {
+          type: Number,
+          default: 0,
+        },
+        GRAMMARLY: {
+          type: Number,
+          default: 0,
+        },
+      },
+      default: {
+        SEMRUSH: 0,
+        CANVA: 0,
+        CHATGPT: 0,
+        INDEXIFICATION: 0,
+        GRAMMARLY: 0,
+      },
+    },
   },
   { timestamps: true }
 );

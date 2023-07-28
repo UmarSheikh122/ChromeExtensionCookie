@@ -46,11 +46,12 @@ const userValidation = async (req, res) => {
 };
 const updateUserStatus = async (req, res) => {
   try {
-    let {email} = req.body;
+    let { email, service } = req.body;
     const user = await UserObj.findOne({ email });
     if (!user) {
       throw new Error("User not found");
     }
+    user.attempt[service] += 1;
     user.status = true;
     await user.save();
     return res.status(200).json({
