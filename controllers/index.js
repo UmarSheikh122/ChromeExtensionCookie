@@ -52,7 +52,6 @@ const updateUserStatus = async (req, res) => {
       throw new Error("User not found");
     }
     user.attempt[service] += 1;
-    user.status = true;
     await user.save();
     return res.status(200).json({
       res: "success",
